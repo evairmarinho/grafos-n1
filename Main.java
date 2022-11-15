@@ -5,15 +5,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Graph originalGraph;
+        Graph graph;
         final String data_path = "aula04/data/n1.txt";
 
-        originalGraph = LoadData.loadAdj(data_path);
+        graph = LoadData.loadAdj(data_path);
 
         System.out.println("Matriz:");
-        System.out.println(originalGraph);
+        System.out.println(graph);
 
-        System.out.println(originalGraph.getCurrentNumVertex());
-        System.out.println(originalGraph.getAllvertex());
+        System.out.println(graph.getCurrentNumVertex());
+        System.out.println(graph.getAllvertex());
     }
 }
