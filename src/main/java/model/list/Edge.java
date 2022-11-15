@@ -1,6 +1,6 @@
-package model.list;
+package src.main.java.model.list;
 
-import model.Vertex;
+import src.main.java.model.Vertex;
 
 public class Edge {
     private Vertex vertex;

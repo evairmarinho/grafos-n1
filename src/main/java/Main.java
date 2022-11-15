@@ -1,12 +1,14 @@
-import model.Graph;
-import util.LoadData;
+package src.main.java;
+
+import src.main.java.model.Graph;
+import src.main.java.util.LoadData;
 
 public class Main {
 
     public static void main(String[] args) {
 
         Graph graph;
-        final String data_path = "aula04/data/n1.txt";
+        final String data_path = "src/main/resources/data/n1.txt";
 
         graph = LoadData.loadAdj(data_path);
 

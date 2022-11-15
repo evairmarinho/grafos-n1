@@ -1,4 +1,4 @@
-package model.list;
+package src.main.java.model.list;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -7,9 +7,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import exception.VertexNotFoundException;
-import model.Graph;
-import model.Vertex;
+import src.main.java.exception.VertexNotFoundException;
+import src.main.java.model.Graph;
+import src.main.java.model.Vertex;
 
 public class ListAdj implements Graph {
     private HashMap<Vertex, LinkedList<Edge>> vertices;

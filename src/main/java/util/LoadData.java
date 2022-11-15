@@ -1,13 +1,13 @@
-package util;
+package src.main.java.util;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import exception.VertexNotFoundException;
-import model.Vertex;
-import model.list.ListAdj;
-import model.matriz.GraphMatriz;
+import src.main.java.exception.VertexNotFoundException;
+import src.main.java.model.Vertex;
+import src.main.java.model.list.ListAdj;
+import src.main.java.model.matriz.GraphMatriz;
 
 public class LoadData {
     public static GraphMatriz loadAdj(String fileName) {

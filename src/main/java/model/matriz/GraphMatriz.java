@@ -1,12 +1,12 @@
-package model.matriz;
+package src.main.java.model.matriz;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
-import exception.VertexNotFoundException;
-import model.Graph;
-import model.Vertex;
+import src.main.java.exception.VertexNotFoundException;
+import src.main.java.model.Graph;
+import src.main.java.model.Vertex;
 
 public class GraphMatriz implements Graph {
     private double[][] mat;

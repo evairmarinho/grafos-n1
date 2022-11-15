@@ -1,6 +1,6 @@
-package model;
+package src.main.java.model;
 
-import exception.VertexNotFoundException;
+import src.main.java.exception.VertexNotFoundException;
 
 import java.util.Set;
 
