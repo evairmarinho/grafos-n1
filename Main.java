@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         Graph originalGraph;
-        final String data_path = "aula04/data/data.txt";
+        final String data_path = "aula04/data/n1.txt";
 
         originalGraph = LoadData.loadAdj(data_path);
 
