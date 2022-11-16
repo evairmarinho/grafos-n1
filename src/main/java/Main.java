@@ -1,29 +1,86 @@
 package src.main.java;
 
-import src.main.java.model.Graph;
 import src.main.java.model.Djikstra;
 import src.main.java.util.LoadData;
 import src.main.java.model.matriz.GraphMatriz;
 import src.main.java.model.Vertex;
+import java.util.ArrayList;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        GraphMatriz graph;
-        Graph graphOpt;
-        final String data_path = "src/main/resources/data/n1.txt";
+        var temp = LoadData.genVertex("src/main/resources/data/n1.txt");
+        String[] vertexTemp = new String[temp.length];
+        for(int i=0; i<temp.length; i++)
+        {
+            vertexTemp[i] = temp[i];
+        }
 
-        graph = LoadData.loadAdj(data_path);
+        Vertex[] vertex = new Vertex[vertexTemp.length];
+        for(int i=0; i < vertexTemp.length; i++){
+            vertex[i] = new Vertex(vertexTemp[i]);
+        }        
+        
+        // Vertex vertexA = new Vertex("A");
+        // Vertex vertexB = new Vertex("B");
+        // Vertex vertexC = new Vertex("C");
+        // Vertex vertexD = new Vertex("D");
 
-        //System.out.println("Matriz:");
-        //System.out.println(graph);
-        //Djikstra algorithm = new Djikstra(); 
-        Vertex[] vertex = graph.all_vertex.toArray(new Vertex[graph.all_vertex.size()]);
-        graphOpt = Djikstra.calculateShortestPathFromSource(graph, vertex[3]);
-        System.out.println(vertex[1].getName());
-        System.out.println(graph);
-        //System.out.println("======================================================");
-        System.out.println(graphOpt);
+        // vertexA.addDestination(vertexB, 2);
+        // vertexA.addDestination(vertexC, 5);
+
+        // vertexB.addDestination(vertexD, 1);
+
+        // vertexD.addDestination(vertexC, 8);
+
+        GraphMatriz graph = new GraphMatriz();
+
+        ArrayList<String[]> edges = LoadData.Edges("src/main/resources/data/n1.txt");
+        createAdjacent(vertex, edges);
+        //final String data_path = "src/main/resources/data/n1.txt";
+        //graph = LoadData.loadAdj(data_path);
+        //Vertex[] vertex = graph.all_vertex.toArray(new Vertex[graph.all_vertex.size()]);
+        //graphOpt = Djikstra.calculateShortestPathFromSource(graph, vertex[0]);
+        
+        for(Vertex item : vertex){
+            graph.addVertex(item);
+        }
+
+        // graph.addVertex(vertexA);
+        // graph.addVertex(vertexB);
+        // graph.addVertex(vertexC);
+        // graph.addVertex(vertexD);
+
+        graph = Djikstra.calculateShortestPathFromSource(graph, vertex[0]);
+
+        for(Vertex item : graph.all_vertex){
+            System.out.println("Vertice " + item.getName());
+            var shortestPath = item.getShortestPath();
+            for(var itemII : shortestPath){
+                System.out.print("->" + itemII);
+            }
+            System.out.println("\n=======================");
+        }
+
+        // for(var item : graphOpt.all_vertex){
+        //     System.out.println(item + " : " + item.getDistance());
+        // }
+    }
+
+    public static void createAdjacent(Vertex[] vertex, ArrayList<String[]> edges)
+    {
+        for(Vertex item : vertex){
+            for(String[] edge : edges){
+                if(item.getName().equals(edge[0])){
+                    int i = 0;
+                    while(!vertex[i].getName().equals(edge[1]))
+                    {
+                        i++;
+                    }
+                    item.addDestination(vertex[i], Integer.parseInt(edge[2]));
+                }
+            }
+        }
     }
 }

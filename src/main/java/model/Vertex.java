@@ -15,6 +15,12 @@ public class Vertex {
         this.name = name;
     }
 
+    public Vertex() {    }
+
+    public void addDestination(Vertex destination, Integer distance) {
+        adjacentVertex.put(destination, distance);
+    }
+
     public String getName() {
         return name;
     }

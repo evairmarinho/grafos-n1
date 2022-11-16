@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map.Entry;
 import src.main.java.view.User;
+import src.main.java.model.matriz.GraphMatriz;
 
 public class Djikstra {
 
@@ -33,7 +34,7 @@ public class Djikstra {
         }
     }
 
-    public static Graph calculateShortestPathFromSource(Graph graph, Vertex source) {
+    public static GraphMatriz calculateShortestPathFromSource(GraphMatriz graph, Vertex source) {
         source.setDistance(0);
 
         Set<Vertex> settledVertex = new HashSet<>();

@@ -12,7 +12,7 @@ public class GraphMatriz implements Graph {
     private double[][] mat;
     private boolean isDirected;
     private HashMap<String, Integer> names; //vertice e indice
-    public Set<Vertex> all_vertex;
+    public Set<Vertex> all_vertex = new HashSet<>();
     private int currentNumVertex; //numero de vertices atual do grafo
 
     public GraphMatriz(int numVertex, boolean directed) {
@@ -40,13 +40,13 @@ public class GraphMatriz implements Graph {
 
     //adiciona um vertice ao grafo
     @Override
-    public void addVertex(Vertex v) throws VertexNotFoundException {
-        if (v.getName() == null) {
-            throw new VertexNotFoundException("Vértice " + v.getName() + " não encontrado.");
-        }
-        names.put(v.getName(), currentNumVertex);
+    public void addVertex(Vertex v){
+        // if (v.getName() == null) {
+        //     throw new VertexNotFoundException("Vértice " + v.getName() + " não encontrado.");
+        // }
+        //names.put(v.getName(), currentNumVertex);
         all_vertex.add(v);
-        currentNumVertex++;
+        //currentNumVertex++;
     }
 
     @Override
