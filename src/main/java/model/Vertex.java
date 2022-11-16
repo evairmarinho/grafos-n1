@@ -1,10 +1,24 @@
-package model;
+package src.main.java.model;
+
+import java.util.List;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.HashMap;
 
 public class Vertex {
     private String name;
+    private Integer distance = Integer.MAX_VALUE;
+    private List<Vertex> shortestPath = new LinkedList<>();
+    Map<Vertex, Integer> adjacentVertex = new HashMap<>();
 
     public Vertex(String name) {
         this.name = name;
+    }
+
+    public Vertex() {    }
+
+    public void addDestination(Vertex destination, Integer distance) {
+        adjacentVertex.put(destination, distance);
     }
 
     public String getName() {
@@ -41,4 +55,23 @@ public class Vertex {
         return true;
     }
 
+    public void setDistance(int distance) {
+        this.distance = distance;
+    }
+
+    public Integer getDistance() {
+        return this.distance;
+    }
+
+    public List<Vertex> getShortestPath() {
+        return shortestPath;
+    }
+
+    public void setShortestPath(List<Vertex> shortestPath) {
+        this.shortestPath = shortestPath;
+    }
+
+    public Map<Vertex, Integer> getAdjacentVertex() {
+        return adjacentVertex;
+    }
 }

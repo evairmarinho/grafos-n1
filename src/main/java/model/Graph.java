@@ -1,6 +1,8 @@
-package model;
+package src.main.java.model;
 
-import exception.VertexNotFoundException;
+import src.main.java.exception.VertexNotFoundException;
+
+import java.util.Set;
 
 public interface Graph {
     boolean adjacent(Vertex u, Vertex v);
@@ -14,4 +16,8 @@ public interface Graph {
     boolean removeEdge(Vertex u, Vertex v);
 
     boolean isDirected();
+
+    int getCurrentNumVertex();
+
+    Set<Vertex> getAllvertex();
 }
