@@ -1,6 +1,7 @@
 package src.main.java;
 
 import src.main.java.model.Graph;
+import src.main.java.model.Djikstra;
 import src.main.java.util.LoadData;
 
 public class Main {
@@ -14,8 +15,7 @@ public class Main {
 
         System.out.println("Matriz:");
         System.out.println(graph);
-
-        System.out.println(graph.getCurrentNumVertex());
-        System.out.println(graph.getAllvertex());
+        Djikstra algorithm = new Djikstra(); 
+        algorithm.djikstraCalcAllVertex(graph,graph.getAllvertex());
     }
 }
