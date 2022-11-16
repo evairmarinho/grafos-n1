@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
-import src.main.java.exception.VertexNotFoundException;
 import src.main.java.model.Graph;
 import src.main.java.model.Vertex;
 

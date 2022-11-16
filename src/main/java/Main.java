@@ -21,36 +21,15 @@ public class Main {
         for(int i=0; i < vertexTemp.length; i++){
             vertex[i] = new Vertex(vertexTemp[i]);
         }        
-        
-        // Vertex vertexA = new Vertex("A");
-        // Vertex vertexB = new Vertex("B");
-        // Vertex vertexC = new Vertex("C");
-        // Vertex vertexD = new Vertex("D");
-
-        // vertexA.addDestination(vertexB, 2);
-        // vertexA.addDestination(vertexC, 5);
-
-        // vertexB.addDestination(vertexD, 1);
-
-        // vertexD.addDestination(vertexC, 8);
 
         GraphMatriz graph = new GraphMatriz();
 
         ArrayList<String[]> edges = LoadData.Edges("src/main/resources/data/n1.txt");
         createAdjacent(vertex, edges);
-        //final String data_path = "src/main/resources/data/n1.txt";
-        //graph = LoadData.loadAdj(data_path);
-        //Vertex[] vertex = graph.all_vertex.toArray(new Vertex[graph.all_vertex.size()]);
-        //graphOpt = Djikstra.calculateShortestPathFromSource(graph, vertex[0]);
         
         for(Vertex item : vertex){
             graph.addVertex(item);
         }
-
-        // graph.addVertex(vertexA);
-        // graph.addVertex(vertexB);
-        // graph.addVertex(vertexC);
-        // graph.addVertex(vertexD);
 
         graph = Djikstra.calculateShortestPathFromSource(graph, vertex[0]);
 
@@ -63,9 +42,6 @@ public class Main {
             System.out.println("\n=======================");
         }
 
-        // for(var item : graphOpt.all_vertex){
-        //     System.out.println(item + " : " + item.getDistance());
-        // }
     }
 
     public static void createAdjacent(Vertex[] vertex, ArrayList<String[]> edges)

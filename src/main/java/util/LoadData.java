@@ -3,10 +3,7 @@ package src.main.java.util;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.LinkedList;
 
 import src.main.java.exception.VertexNotFoundException;
 import src.main.java.model.Vertex;
@@ -52,11 +49,6 @@ public class LoadData {
             System.out.println(ex.getMessage());
             return null;
         }
-        // } catch (VertexNotFoundException ex) {
-        //     System.err.println("Erro: Tentativa de adicionar uma aresta com vértice que não existe");
-        //     System.err.println(ex.getMessage());
-        //     return null;
-        // }
     }
 
     public static ListAdj loadList(String fileName) {
