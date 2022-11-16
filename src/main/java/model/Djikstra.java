@@ -4,7 +4,6 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map.Entry;
-import java.util.Iterator;
 import src.main.java.view.User;
 
 public class Djikstra {
@@ -58,12 +57,12 @@ public class Djikstra {
         return graph;
     }
 
-    public void djikstraCalcAllVertex(Graph graph, Set<Vertex> vertex_list) {
+    /*public void djikstraCalcAllVertex(Graph graph, Set<Vertex> vertex_list) {
         Iterator<Vertex> djikstraCalc = vertex_list.iterator();
 
         while (djikstraCalc.hasNext()) {
             interface_graph.showVertexName(djikstraCalc.next());
             System.out.println(calculateShortestPathFromSource(graph, djikstraCalc.next()));
         }
-    }
+    }*/
 }

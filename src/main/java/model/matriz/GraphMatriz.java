@@ -11,9 +11,9 @@ import src.main.java.model.Vertex;
 public class GraphMatriz implements Graph {
     private double[][] mat;
     private boolean isDirected;
-    private HashMap<String, Integer> names;
-    private Set<Vertex> all_vertex;
-    private int currentNumVertex;
+    private HashMap<String, Integer> names; //vertice e indice
+    public Set<Vertex> all_vertex;
+    private int currentNumVertex; //numero de vertices atual do grafo
 
     public GraphMatriz(int numVertex, boolean directed) {
         mat = new double[numVertex][numVertex];
@@ -22,6 +22,9 @@ public class GraphMatriz implements Graph {
         this.all_vertex = new HashSet<>();
     }
 
+    public GraphMatriz() {}
+
+    //adiciona uma areasta a matriz 
     public boolean addEdge(Vertex u, Vertex v, double value) {
         Integer line = names.get(u.getName());
         Integer column = names.get(v.getName());
@@ -35,6 +38,7 @@ public class GraphMatriz implements Graph {
         return true;
     }
 
+    //adiciona um vertice ao grafo
     @Override
     public void addVertex(Vertex v) throws VertexNotFoundException {
         if (v.getName() == null) {
@@ -57,6 +61,7 @@ public class GraphMatriz implements Graph {
         return out;
     }
 
+    //verifica se existe uma aresta entre dois vertices
     @Override
     public boolean adjacent(Vertex u, Vertex v) {
         Integer line = names.get(u.getName());
