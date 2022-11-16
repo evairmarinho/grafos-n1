@@ -57,13 +57,4 @@ public class Djikstra {
         }
         return graph;
     }
-
-    /*public void djikstraCalcAllVertex(Graph graph, Set<Vertex> vertex_list) {
-        Iterator<Vertex> djikstraCalc = vertex_list.iterator();
-
-        while (djikstraCalc.hasNext()) {
-            interface_graph.showVertexName(djikstraCalc.next());
-            System.out.println(calculateShortestPathFromSource(graph, djikstraCalc.next()));
-        }
-    }*/
 }

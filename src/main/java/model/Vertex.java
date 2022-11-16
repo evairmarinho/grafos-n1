@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 public class Vertex {
     private String name;
-    private Integer distance = Integer.MAX_VALUE;
+    public Integer distance = Integer.MAX_VALUE;
     private List<Vertex> shortestPath = new LinkedList<>();
     Map<Vertex, Integer> adjacentVertex = new HashMap<>();
 

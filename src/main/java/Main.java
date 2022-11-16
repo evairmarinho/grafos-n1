@@ -37,8 +37,9 @@ public class Main {
             System.out.println("Vertice " + item.getName());
             var shortestPath = item.getShortestPath();
             for(var itemII : shortestPath){
-                System.out.print("->" + itemII);
+                System.out.println("->" + itemII);                
             }
+            System.out.print("Total cost -> " + item.distance);
             System.out.println("\n=======================");
         }
 
